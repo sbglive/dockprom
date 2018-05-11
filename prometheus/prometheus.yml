@@ -28,6 +28,16 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
+  - job_name: 'sbgpool'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['pool.sbg-live.com:9998']
+
+  - job_name: 'localminer'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:9999']
+      
 alerting:
   alertmanagers:
   - scheme: http
